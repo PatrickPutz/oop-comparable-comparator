@@ -2,7 +2,7 @@ package org.campus02.sorting.ue.employees;
 
 import java.util.Objects;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
     private int empNumber;
     private String name;
@@ -65,5 +65,10 @@ public class Employee {
     @Override
     public int hashCode() {
         return Objects.hash(empNumber, name, salary, department);
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return Integer.compare(this.empNumber, o.getEmpNumber());
     }
 }
