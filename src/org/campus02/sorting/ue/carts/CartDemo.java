@@ -28,6 +28,17 @@ public class CartDemo {
             System.out.println(cart.toString());
         }
 
+        Collections.sort(carts, new CartUsernameComparator());
+        System.out.println("<<< Sorted By Username >>>");
+        for (Cart cart : carts) {
+            System.out.println(cart.toString());
+        }
+
+        Collections.sort(carts, new CartTotalItemsComparator());
+        System.out.println("<<< Sorted By Total Items >>>");
+        for (Cart cart : carts) {
+            System.out.println(cart.toString());
+        }
     }
 
 }
