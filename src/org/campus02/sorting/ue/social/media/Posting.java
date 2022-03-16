@@ -13,7 +13,7 @@ public class Posting implements Comparable<Posting> {
     private int shares;
     private int views;
 
-    public Posting(int id, String realname, String screenname, LocalDateTime datetime) {
+    public Posting(int id, String realname, String screenname, LocalDateTime datetime, int likes, int shares, int views) {
         this.id = id;
         this.realname = realname;
         this.screenname = screenname;
