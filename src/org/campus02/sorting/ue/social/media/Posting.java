@@ -3,7 +3,7 @@ package org.campus02.sorting.ue.social.media;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Posting {
+public class Posting implements Comparable<Posting> {
 
     private int id;
     private String realname;
@@ -13,7 +13,7 @@ public class Posting {
     private int shares;
     private int views;
 
-    public Posting(int id, String realname, String screenname, LocalDateTime datetime, int likes, int shares, int views) {
+    public Posting(int id, String realname, String screenname, LocalDateTime datetime) {
         this.id = id;
         this.realname = realname;
         this.screenname = screenname;
@@ -75,5 +75,10 @@ public class Posting {
     @Override
     public int hashCode() {
         return Objects.hash(id, realname, screenname, datetime, likes, shares, views);
+    }
+
+    @Override
+    public int compareTo(Posting o) {
+        return Integer.compare(this.getId(), o.getId());
     }
 }
